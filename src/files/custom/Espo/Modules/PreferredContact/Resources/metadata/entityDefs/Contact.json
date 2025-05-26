@@ -1,0 +1,104 @@
+{
+    "fields": {
+        "pcAccountIsPreferred": {
+            "type": "bool",
+            "notStorable": true,
+            "mergeDisabled": true,
+            "importDisabled": true,
+            "directUpdateDisabled": true,
+            "foreignAccessDisabled": true,
+            "layoutMassUpdateDisabled": true,
+            "customizationDefaultDisabled": true,
+            "customizationAuditedDisabled": true,
+            "customizationReadOnlyDisabled": true,
+            "customizationReadOnlyAfterCreateDisabled": true,
+            "customizationInlineEditDisabledDisabled": true,
+            "select": {
+                "select": "accountContactPrimary.pcIsPreferred",
+                "leftJoins": [
+                    [
+                        "AccountContact",
+                        "accountContactPrimary",
+                        {
+                            "contact.id:": "accountContactPrimary.contactId",
+                            "contact.accountId:": "accountContactPrimary.accountId",
+                            "accountContactPrimary.deleted": false
+                        }
+                    ]
+                ]
+            },
+            "where": {
+                "= TRUE": {
+                    "leftJoins": [
+                        [
+                            "AccountContact",
+                            "accountContactFilterPcIsPreferred",
+                            {
+                                "contact.id:": "accountContactFilterPcIsPreferred.contactId",
+                                "contact.accountId:": "accountContactFilterPcIsPreferred.accountId",
+                                "accountContactFilterPcIsPreferred.deleted": false
+                            }
+                        ]
+                    ],
+                    "whereClause": {
+                        "accountContactFilterPcIsPreferred.pcIsPreferred": true
+                    }
+                },
+                "= FALSE": {
+                    "leftJoins": [
+                        [
+                            "AccountContact",
+                            "accountContactFilterPcIsPreferred",
+                            {
+                                "contact.id:": "accountContactFilterPcIsPreferred.contactId",
+                                "contact.accountId:": "accountContactFilterPcIsPreferred.accountId",
+                                "accountContactFilterPcIsPreferred.deleted": false
+                            }
+                        ]
+                    ],
+                    "whereClause": {
+                        "OR": [
+                            {
+                                "accountContactFilterPcIsPreferred.pcIsPreferred!=": true
+                            },
+                            {
+                                "accountContactFilterPcIsPreferred.pcIsPreferred=": null
+                            }
+                        ]
+                    }
+                }
+            },
+            "order": {
+                "order": [
+                    ["accountContactPrimary.pcIsPreferred", "{direction}"],
+                    ["lastName", "asc"],
+                    ["firstName", "asc"]
+                ],
+                "leftJoins": [
+                    [
+                        "AccountContact",
+                        "accountContactPrimary",
+                        {
+                            "contact.id:": "accountContactPrimary.contactId",
+                            "contact.accountId:": "accountContactPrimary.accountId",
+                            "accountContactPrimary.deleted": false
+                        }
+                    ]
+                ]
+            }
+        }
+    },
+    "links": {
+        "accounts": {
+            "additionalColumns": {
+                "pcIsPreferred": {
+                    "type": "bool",
+                    "default": false
+                }
+            },
+            "columnAttributeMap": {
+                "pcIsPreferred": "pcAccountIsPreferred"
+            }
+        }
+    }
+}

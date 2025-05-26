@@ -1,0 +1,16 @@
+{
+    "rowActionDefs": {
+        "pcSetPreferred": {
+            "labelTranslation": "Contact.actions.pcSetPreferred",
+            "handler": "preferred-contact:handlers/contact/toggle-is-preferred-row-action",
+            "acl": "edit",
+            "groupIndex": 3
+        },
+        "pcSetNotPreferred": {
+            "labelTranslation": "Contact.actions.pcSetNotPreferred",
+            "handler": "preferred-contact:handlers/contact/toggle-is-preferred-row-action",
+            "acl": "edit",
+            "groupIndex": 3
+        }
+    }
+}

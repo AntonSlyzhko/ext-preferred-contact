@@ -1,0 +1,13 @@
+{
+    "relationshipPanels": {
+        "contacts": {
+            "orderBy": "pcAccountContactIsPreferred",
+            "orderDirection": "desc",
+            "rowActionList": [
+                "__APPEND__",
+                "pcSetPreferred",
+                "pcSetNotPreferred"
+            ]
+        }
+    }
+}

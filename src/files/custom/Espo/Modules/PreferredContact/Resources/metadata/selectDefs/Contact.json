@@ -1,0 +1,11 @@
+{
+    "orderItemConverterClassNameMap": {
+        "pcAccountContactIsPreferred": "Espo\\Modules\\PreferredContact\\Classes\\Select\\Contact\\OrderItemConverters\\AccountContactIsPreferred"
+    },
+    "selectAttributesDependencyMap": {
+        "accountId": [
+            "__APPEND__",
+            "pcAccountIsPreferred"
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "fields": {
+        "pcAccountIsPreferred": "Основний"
+    },
+    "actions": {
+        "pcSetPreferred": "Позначити основним",
+        "pcSetNotPreferred": "Позначити неосновним"
+    }
+}

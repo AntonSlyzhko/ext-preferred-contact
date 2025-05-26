@@ -3,7 +3,7 @@
     "name": "Preferred Contact",
     "description": "Mark preferred Contacts in Account.",
     "author": "Anton Slyzhko",
-    "bundled": false,
+    "bundled": true,
     "acceptableVersions": [
         ">=9.1.0"
     ],

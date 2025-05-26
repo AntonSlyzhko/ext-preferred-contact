@@ -1,0 +1,7 @@
+[
+    {
+        "route": "/Contact/:id/toggleIsPreferred",
+        "method": "post",
+        "actionClassName": "Espo\\Modules\\PreferredContact\\Tools\\Contact\\Api\\PostToggleIsPreferred"
+    }
+]
